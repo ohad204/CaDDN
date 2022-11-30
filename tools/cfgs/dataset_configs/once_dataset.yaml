@@ -1,5 +1,5 @@
 DATASET: 'ONCEDataset'
-DATA_PATH: '../data/once'
+DATA_PATH: '/cortex/data/images/once' #'../data/once'
 CLOUD_DATA_PATH: '/cache/once'
 
 POINT_CLOUD_RANGE: [-75.2, -75.2, -5.0, 75.2, 75.2, 3.0]

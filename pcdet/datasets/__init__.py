@@ -8,12 +8,26 @@ from .dataset import DatasetTemplate
 from .kitti.kitti_dataset import KittiDataset
 from .nuscenes.nuscenes_dataset import NuScenesDataset
 from .waymo.waymo_dataset import WaymoDataset
+from .once.once_dataset import ONCEDataset
+
+from .once.once_semi_dataset import ONCEPretrainDataset, ONCELabeledDataset, ONCEUnlabeledDataset, ONCETestDataset, split_once_semi_data
 
 __all__ = {
     'DatasetTemplate': DatasetTemplate,
     'KittiDataset': KittiDataset,
     'NuScenesDataset': NuScenesDataset,
-    'WaymoDataset': WaymoDataset
+    'WaymoDataset': WaymoDataset,
+    'ONCEDataset': ONCEDataset    
+}
+
+_semi_dataset_dict = {
+    'ONCEDataset': {
+        'PARTITION_FUNC': split_once_semi_data,
+        'PRETRAIN': ONCEPretrainDataset,
+        'LABELED': ONCELabeledDataset,
+        'UNLABELED': ONCEUnlabeledDataset,
+        'TEST': ONCETestDataset
+    }
 }
 
 
